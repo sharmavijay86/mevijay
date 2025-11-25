@@ -296,6 +296,191 @@
             margin-bottom: 1rem;
         }
 
+        /* Experience Section */
+        .experience {
+            background: var(--bg-light);
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            border-radius: 3px;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-bottom: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -38px;
+            top: 5px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            border: 3px solid white;
+            box-shadow: var(--shadow);
+        }
+
+        .timeline-card {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-card:hover {
+            transform: translateX(10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .timeline-date {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-company {
+            color: var(--accent-color);
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+        }
+
+        .timeline-description {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Projects Section */
+        .project-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .project-image {
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+
+        .project-image.aws {
+            background: linear-gradient(135deg, #FF9900 0%, #FF6600 100%);
+            color: white;
+        }
+
+        .project-image.azure {
+            background: linear-gradient(135deg, #0078D4 0%, #005A9E 100%);
+            color: white;
+        }
+
+        .project-image.gcp {
+            background: linear-gradient(135deg, #4285F4 0%, #34A853 100%);
+            color: white;
+        }
+
+        .project-image.kubernetes {
+            background: linear-gradient(135deg, #326CE5 0%, #1D4ED8 100%);
+            color: white;
+        }
+
+        .project-image.ai {
+            background: linear-gradient(135deg, #7C3AED 0%, #5B21B6 100%);
+            color: white;
+        }
+
+        .project-image.devops {
+            background: linear-gradient(135deg, #059669 0%, #047857 100%);
+            color: white;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-content h4 {
+            margin-bottom: 0.75rem;
+            color: var(--text-dark);
+        }
+
+        .project-content p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .project-tag {
+            background: var(--bg-light);
+            color: var(--primary-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        /* Certifications Badge */
+        .cert-badge {
+            display: inline-flex;
+            align-items: center;
+            background: white;
+            border-radius: 10px;
+            padding: 0.75rem 1rem;
+            margin: 0.5rem;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .cert-badge:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .cert-badge .material-icons {
+            color: var(--accent-color);
+            margin-right: 0.5rem;
+        }
+
+        .cert-badge span {
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
         /* Footer */
         .footer {
             background: var(--text-dark);
@@ -369,6 +554,12 @@
                         <a class="nav-link" href="#skills">Skills</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="#experience">Experience</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#services">Services</a>
                     </li>
                     <li class="nav-item">
@@ -385,8 +576,8 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 hero-content">
                     <h1>Vijay Vishwakarma</h1>
-                    <p class="lead">Cloud Engineer & Freelance Consultant</p>
-                    <p class="lead">Specialized in AWS, Azure & Google Cloud Platform</p>
+                    <p class="lead">Cloud Engineer, DevOps & AI Solutions Architect</p>
+                    <p class="lead">Expert in AWS, Azure, Google Cloud & AI/ML Infrastructure</p>
                     <a href="#contact" class="btn btn-primary-custom">
                         <span class="material-icons" style="vertical-align: middle; margin-right: 8px;">email</span>
                         Get In Touch
@@ -422,19 +613,22 @@
                 <div class="col-lg-8">
                     <div class="about-content fade-in">
                         <p class="mb-4">
-                            I'm Vijay Vishwakarma, a passionate Cloud Engineer with extensive experience in designing, 
-                            implementing, and managing cloud infrastructure across multiple platforms. With a deep 
-                            understanding of AWS, Azure, and Google Cloud Platform, I help organizations transform 
-                            their infrastructure and optimize their cloud journey.
+                            I'm Vijay Vishwakarma, a passionate Cloud Engineer and AI Solutions Architect with extensive experience in designing, 
+                            implementing, and managing cloud infrastructure across multiple platforms. With deep expertise in 
+                            AWS, Azure, and Google Cloud Platform, I help organizations transform their infrastructure, 
+                            implement AI/ML solutions, and optimize their cloud journey.
                         </p>
                         <p class="mb-4">
                             As a freelance consultant, I work with businesses of all sizes to architect scalable, 
                             secure, and cost-effective cloud solutions. My expertise spans from infrastructure 
-                            automation and DevOps practices to cloud migration strategies and optimization.
+                            automation and DevOps practices to cloud migration strategies, AI/ML infrastructure, 
+                            and intelligent automation solutions.
                         </p>
                         <p>
-                            I'm committed to staying at the forefront of cloud technology trends and continuously 
-                            expanding my knowledge to deliver innovative solutions that drive business success.
+                            I'm committed to staying at the forefront of cloud technology and AI trends, continuously 
+                            expanding my knowledge to deliver innovative solutions that drive business success. 
+                            Whether it's building Kubernetes platforms, implementing MLOps pipelines, or designing 
+                            enterprise-scale cloud architectures, I bring a solutions-focused approach to every project.
                         </p>
                     </div>
                 </div>
@@ -501,6 +695,201 @@
                         <p>Cloud monitoring, performance optimization, cost management, and resource scaling strategies.</p>
                     </div>
                 </div>
+                <div class="col-md-4">
+                    <div class="skill-card fade-in">
+                        <div class="skill-icon">
+                            <span class="material-icons">psychology</span>
+                        </div>
+                        <h4>AI/ML Infrastructure</h4>
+                        <p>MLOps pipelines, AI model deployment, SageMaker, Vertex AI, and intelligent automation solutions.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="skill-card fade-in">
+                        <div class="skill-icon">
+                            <span class="material-icons">code</span>
+                        </div>
+                        <h4>Infrastructure as Code</h4>
+                        <p>Terraform, Pulumi, CloudFormation, ARM templates for automated and reproducible infrastructure.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section experience">
+        <div class="container">
+            <h2 class="section-title fade-in">Professional Experience</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="timeline">
+                        <div class="timeline-item fade-in">
+                            <div class="timeline-card">
+                                <div class="timeline-date">2020 - Present</div>
+                                <h4 class="timeline-title">Senior Cloud & DevOps Architect</h4>
+                                <div class="timeline-company">Freelance Consultant</div>
+                                <p class="timeline-description">
+                                    Leading cloud transformation initiatives for enterprise clients. Architecting multi-cloud solutions, 
+                                    implementing GitOps practices, and building AI/ML infrastructure on AWS, Azure, and GCP. 
+                                    Specializing in Kubernetes orchestration and serverless architectures.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="timeline-item fade-in">
+                            <div class="timeline-card">
+                                <div class="timeline-date">2017 - 2020</div>
+                                <h4 class="timeline-title">Cloud Solutions Architect</h4>
+                                <div class="timeline-company">Enterprise Technology Firm</div>
+                                <p class="timeline-description">
+                                    Designed and implemented cloud-native solutions for Fortune 500 clients. Led migration projects 
+                                    from on-premises to cloud infrastructure. Established DevOps culture and automated deployment pipelines.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="timeline-item fade-in">
+                            <div class="timeline-card">
+                                <div class="timeline-date">2014 - 2017</div>
+                                <h4 class="timeline-title">DevOps Engineer</h4>
+                                <div class="timeline-company">Technology Solutions Provider</div>
+                                <p class="timeline-description">
+                                    Implemented CI/CD pipelines, infrastructure as code, and container orchestration solutions. 
+                                    Managed hybrid cloud environments and optimized application performance and reliability.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Certifications -->
+                    <div class="text-center mt-5 fade-in">
+                        <h4 class="mb-4">Professional Certifications</h4>
+                        <div class="cert-badge">
+                            <span class="material-icons">verified</span>
+                            <span>AWS Solutions Architect</span>
+                        </div>
+                        <div class="cert-badge">
+                            <span class="material-icons">verified</span>
+                            <span>Azure Administrator</span>
+                        </div>
+                        <div class="cert-badge">
+                            <span class="material-icons">verified</span>
+                            <span>GCP Cloud Engineer</span>
+                        </div>
+                        <div class="cert-badge">
+                            <span class="material-icons">verified</span>
+                            <span>CKA Kubernetes</span>
+                        </div>
+                        <div class="cert-badge">
+                            <span class="material-icons">verified</span>
+                            <span>HashiCorp Terraform</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">Featured Projects</h2>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="project-card fade-in">
+                        <div class="project-image kubernetes">
+                            <span class="material-icons">hub</span>
+                        </div>
+                        <div class="project-content">
+                            <h4>Multi-Cloud Kubernetes Platform</h4>
+                            <p>Designed and implemented a multi-cluster Kubernetes platform spanning AWS, Azure, and GCP with unified GitOps deployment.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">Kubernetes</span>
+                                <span class="project-tag">ArgoCD</span>
+                                <span class="project-tag">Terraform</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="project-card fade-in">
+                        <div class="project-image ai">
+                            <span class="material-icons">psychology</span>
+                        </div>
+                        <div class="project-content">
+                            <h4>AI/ML Infrastructure Pipeline</h4>
+                            <p>Built scalable ML training infrastructure using AWS SageMaker, Kubeflow, and MLflow for end-to-end model lifecycle management.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">MLOps</span>
+                                <span class="project-tag">SageMaker</span>
+                                <span class="project-tag">Kubeflow</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="project-card fade-in">
+                        <div class="project-image devops">
+                            <span class="material-icons">sync</span>
+                        </div>
+                        <div class="project-content">
+                            <h4>Enterprise CI/CD Platform</h4>
+                            <p>Implemented a comprehensive CI/CD platform with GitHub Actions, Jenkins, and Spinnaker for 200+ microservices deployment.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">GitOps</span>
+                                <span class="project-tag">Jenkins</span>
+                                <span class="project-tag">Spinnaker</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="project-card fade-in">
+                        <div class="project-image aws">
+                            <span class="material-icons">cloud</span>
+                        </div>
+                        <div class="project-content">
+                            <h4>AWS Serverless Architecture</h4>
+                            <p>Designed cost-effective serverless solution using Lambda, API Gateway, and DynamoDB reducing infrastructure costs by 60%.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">Lambda</span>
+                                <span class="project-tag">Serverless</span>
+                                <span class="project-tag">DynamoDB</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="project-card fade-in">
+                        <div class="project-image azure">
+                            <span class="material-icons">security</span>
+                        </div>
+                        <div class="project-content">
+                            <h4>Zero Trust Security Framework</h4>
+                            <p>Implemented comprehensive zero-trust security architecture on Azure with identity-based access, network segmentation, and continuous monitoring.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">Azure AD</span>
+                                <span class="project-tag">Sentinel</span>
+                                <span class="project-tag">Zero Trust</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="project-card fade-in">
+                        <div class="project-image gcp">
+                            <span class="material-icons">insights</span>
+                        </div>
+                        <div class="project-content">
+                            <h4>Data Analytics Platform</h4>
+                            <p>Built real-time data analytics platform on GCP using BigQuery, Dataflow, and Looker for processing 10TB+ daily data streams.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">BigQuery</span>
+                                <span class="project-tag">Dataflow</span>
+                                <span class="project-tag">Looker</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -558,10 +947,10 @@
                 <div class="col-lg-4">
                     <div class="service-card fade-in">
                         <div class="service-icon">
-                            <span class="material-icons">support</span>
+                            <span class="material-icons">psychology</span>
                         </div>
-                        <h3>Ongoing Support</h3>
-                        <p>24/7 monitoring, maintenance, and support services to ensure your cloud infrastructure runs smoothly.</p>
+                        <h3>AI/ML Solutions</h3>
+                        <p>Design and deploy AI/ML infrastructure, MLOps pipelines, and intelligent automation solutions on cloud platforms.</p>
                     </div>
                 </div>
             </div>
@@ -573,18 +962,18 @@
         <div class="container">
             <h2 class="section-title fade-in" style="color: white;">Get In Touch</h2>
             <div class="row justify-content-center">
-                <div class="col-lg-8">
+                <div class="col-lg-10">
                     <div class="row g-4">
-                        <div class="col-md-4">
+                        <div class="col-md-3">
                             <div class="contact-card fade-in">
                                 <div class="contact-icon">
                                     <span class="material-icons">email</span>
                                 </div>
                                 <h4>Email</h4>
-                                <p>vijay@mevijay.io</p>
+                                <p><a href="mailto:vijay@mevijay.io" style="color: white; text-decoration: none;">vijay@mevijay.io</a></p>
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-3">
                             <div class="contact-card fade-in">
                                 <div class="contact-icon">
                                     <span class="material-icons">phone</span>
@@ -593,18 +982,27 @@
                                 <p>+91 20 xxxxxxx</p>
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-3">
                             <div class="contact-card fade-in">
                                 <div class="contact-icon">
                                     <span class="material-icons">business</span>
                                 </div>
                                 <h4>LinkedIn</h4>
-                                <p>linkedin.com/in/sharmavijay86</p>
+                                <p><a href="https://linkedin.com/in/sharmavijay86" target="_blank" style="color: white; text-decoration: none;">sharmavijay86</a></p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="contact-card fade-in">
+                                <div class="contact-icon">
+                                    <span class="material-icons">code</span>
+                                </div>
+                                <h4>GitHub</h4>
+                                <p><a href="https://github.com/sharmavijay86" target="_blank" style="color: white; text-decoration: none;">sharmavijay86</a></p>
                             </div>
                         </div>
                     </div>
                     <div class="text-center mt-5 fade-in">
-                        <p class="lead">Ready to transform your cloud infrastructure? Let's discuss your project!</p>
+                        <p class="lead">Ready to transform your cloud infrastructure with AI-powered solutions? Let's discuss your project!</p>
                         <a href="mailto:vijay@mevijay.io" class="btn btn-primary-custom">
                             <span class="material-icons" style="vertical-align: middle; margin-right: 8px;">send</span>
                             Send Message
@@ -618,7 +1016,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Vijay Vishwakarma. All rights reserved. | Cloud Engineer & Freelance Consultant</p>
+            <p>&copy; 2025 Vijay Vishwakarma. All rights reserved. | Cloud Engineer, DevOps & AI Solutions Architect</p>
         </div>
     </footer>
 
