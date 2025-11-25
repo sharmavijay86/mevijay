@@ -3,7 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vijay Vishwakarma - Cloud Engineer Portfolio</title>
+    <title>Vijay Vishwakarma - DevOps, Cloud & AI Solutions Architect</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Vijay Vishwakarma - Expert DevOps Engineer, Public Cloud Architect (AWS, Azure, GCP), and AI Solutions Architect. Freelance consultant specializing in cloud infrastructure, automation, and AI-driven solutions.">
+    <meta name="keywords" content="DevOps, Cloud Engineer, AWS, Azure, GCP, AI Solutions Architect, Kubernetes, Docker, Terraform, Cloud Migration, Infrastructure as Code">
+    <meta name="author" content="Vijay Vishwakarma">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Vijay Vishwakarma - DevOps, Cloud & AI Solutions Architect">
+    <meta property="og:description" content="Expert DevOps Engineer, Public Cloud Architect, and AI Solutions Architect. Freelance consultant specializing in cloud infrastructure and AI-driven solutions.">
+    <meta property="og:url" content="https://mevijay.io">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Vijay Vishwakarma - DevOps, Cloud & AI Solutions Architect">
+    <meta name="twitter:description" content="Expert DevOps Engineer, Public Cloud Architect, and AI Solutions Architect.">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://mevijay.io">
     
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -271,6 +291,181 @@
             margin-bottom: 1.5rem;
         }
 
+        /* Experience Section */
+        .experience {
+            background: var(--bg-light);
+        }
+
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: var(--primary-color);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-left: auto;
+            padding-left: 2rem;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-right: auto;
+            padding-right: 2rem;
+            text-align: right;
+        }
+
+        .timeline-content {
+            width: 45%;
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 16px;
+            height: 16px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: var(--shadow);
+            z-index: 2;
+        }
+
+        .timeline-date {
+            font-size: 0.9rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .timeline-company {
+            font-size: 1rem;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Projects Section */
+        .projects {
+            background: white;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            height: 100%;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .project-header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            padding: 1.5rem;
+            color: white;
+        }
+
+        .project-header h4 {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        .project-body {
+            padding: 1.5rem;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .project-tag {
+            background: var(--bg-light);
+            color: var(--primary-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        /* Social Links */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-link {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--accent-color);
+            transform: translateY(-3px);
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 20px;
+            }
+            
+            .timeline-dot {
+                left: 20px;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-content,
+            .timeline-item:nth-child(even) .timeline-content {
+                width: calc(100% - 50px);
+                margin-left: 50px;
+                padding-left: 1rem;
+                padding-right: 1rem;
+                text-align: left;
+            }
+        }
+
         /* Contact Section */
         .contact {
             background: linear-gradient(135deg, var(--text-dark) 0%, #374151 100%);
@@ -369,6 +564,12 @@
                         <a class="nav-link" href="#skills">Skills</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="#experience">Experience</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#services">Services</a>
                     </li>
                     <li class="nav-item">
@@ -385,8 +586,8 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 hero-content">
                     <h1>Vijay Vishwakarma</h1>
-                    <p class="lead">Cloud Engineer & Freelance Consultant</p>
-                    <p class="lead">Specialized in AWS, Azure & Google Cloud Platform</p>
+                    <p class="lead">DevOps Engineer | Cloud Architect | AI Solutions Architect</p>
+                    <p class="lead">Specialized in AWS, Azure, GCP & AI-Driven Infrastructure</p>
                     <a href="#contact" class="btn btn-primary-custom">
                         <span class="material-icons" style="vertical-align: middle; margin-right: 8px;">email</span>
                         Get In Touch
@@ -422,19 +623,25 @@
                 <div class="col-lg-8">
                     <div class="about-content fade-in">
                         <p class="mb-4">
-                            I'm Vijay Vishwakarma, a passionate Cloud Engineer with extensive experience in designing, 
-                            implementing, and managing cloud infrastructure across multiple platforms. With a deep 
-                            understanding of AWS, Azure, and Google Cloud Platform, I help organizations transform 
-                            their infrastructure and optimize their cloud journey.
+                            I'm Vijay Vishwakarma, a seasoned DevOps Engineer, Public Cloud Architect, and AI Solutions 
+                            Architect with extensive experience in designing and implementing enterprise-grade cloud 
+                            infrastructure. With deep expertise in AWS, Azure, and Google Cloud Platform, I help 
+                            organizations accelerate their digital transformation journey.
                         </p>
                         <p class="mb-4">
-                            As a freelance consultant, I work with businesses of all sizes to architect scalable, 
-                            secure, and cost-effective cloud solutions. My expertise spans from infrastructure 
-                            automation and DevOps practices to cloud migration strategies and optimization.
+                            My expertise spans the entire DevOps lifecycle - from CI/CD pipeline automation and 
+                            Infrastructure as Code (Terraform, CloudFormation) to Kubernetes orchestration and 
+                            microservices architecture. I specialize in building resilient, scalable systems that 
+                            leverage AI and machine learning capabilities for intelligent automation.
+                        </p>
+                        <p class="mb-4">
+                            As a freelance consultant, I work with businesses of all sizes to architect innovative 
+                            solutions that combine cloud infrastructure with AI-driven insights. My focus is on 
+                            delivering cost-effective, secure, and highly available systems that drive business value.
                         </p>
                         <p>
-                            I'm committed to staying at the forefront of cloud technology trends and continuously 
-                            expanding my knowledge to deliver innovative solutions that drive business success.
+                            I'm passionate about emerging technologies and continuously expanding my knowledge in 
+                            cloud-native development, MLOps, and AI infrastructure to deliver cutting-edge solutions.
                         </p>
                     </div>
                 </div>
@@ -499,6 +706,175 @@
                         </div>
                         <h4>Monitoring & Optimization</h4>
                         <p>Cloud monitoring, performance optimization, cost management, and resource scaling strategies.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="skill-card fade-in">
+                        <div class="skill-icon">
+                            <span class="material-icons">psychology</span>
+                        </div>
+                        <h4>AI & Machine Learning</h4>
+                        <p>MLOps, AI infrastructure design, LLM deployment, and machine learning pipeline orchestration on cloud platforms.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="skill-card fade-in">
+                        <div class="skill-icon">
+                            <span class="material-icons">auto_awesome</span>
+                        </div>
+                        <h4>Intelligent Automation</h4>
+                        <p>AI-driven infrastructure automation, chatbots, intelligent monitoring, and predictive analytics solutions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section experience">
+        <div class="container">
+            <h2 class="section-title fade-in">Professional Experience</h2>
+            <div class="timeline fade-in">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2020 - Present</div>
+                        <div class="timeline-title">Senior Cloud & DevOps Consultant</div>
+                        <div class="timeline-company">Freelance</div>
+                        <p>Leading cloud architecture design and DevOps transformation projects for enterprise clients. Specializing in multi-cloud strategies, AI infrastructure, and cost optimization.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2018 - 2020</div>
+                        <div class="timeline-title">Cloud Solutions Architect</div>
+                        <div class="timeline-company">Enterprise Tech Company</div>
+                        <p>Designed and implemented large-scale cloud migrations to AWS and Azure. Built CI/CD pipelines and Kubernetes clusters serving millions of users.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2015 - 2018</div>
+                        <div class="timeline-title">DevOps Engineer</div>
+                        <div class="timeline-company">Software Solutions Inc.</div>
+                        <p>Implemented Infrastructure as Code using Terraform and Ansible. Automated deployment pipelines reducing release cycles from weeks to hours.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2012 - 2015</div>
+                        <div class="timeline-title">Systems Administrator</div>
+                        <div class="timeline-company">Tech Startup</div>
+                        <p>Managed Linux/Windows server infrastructure and introduced early cloud adoption strategies. First exposure to AWS services.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section projects">
+        <div class="container">
+            <h2 class="section-title fade-in">Featured Projects</h2>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="project-card fade-in">
+                        <div class="project-header">
+                            <span class="material-icons" style="font-size: 2rem; margin-bottom: 0.5rem;">cloud</span>
+                            <h4>Multi-Cloud Infrastructure Platform</h4>
+                        </div>
+                        <div class="project-body">
+                            <p>Designed and deployed a multi-cloud infrastructure spanning AWS, Azure, and GCP with unified monitoring and governance.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">Terraform</span>
+                                <span class="project-tag">AWS</span>
+                                <span class="project-tag">Azure</span>
+                                <span class="project-tag">GCP</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="project-card fade-in">
+                        <div class="project-header">
+                            <span class="material-icons" style="font-size: 2rem; margin-bottom: 0.5rem;">psychology</span>
+                            <h4>AI-Powered MLOps Pipeline</h4>
+                        </div>
+                        <div class="project-body">
+                            <p>Built end-to-end MLOps infrastructure for training and deploying machine learning models at scale with automated retraining.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">Kubernetes</span>
+                                <span class="project-tag">MLflow</span>
+                                <span class="project-tag">SageMaker</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="project-card fade-in">
+                        <div class="project-header">
+                            <span class="material-icons" style="font-size: 2rem; margin-bottom: 0.5rem;">security</span>
+                            <h4>Zero-Trust Security Architecture</h4>
+                        </div>
+                        <div class="project-body">
+                            <p>Implemented comprehensive zero-trust security model across hybrid cloud environment with automated threat detection.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">HashiCorp Vault</span>
+                                <span class="project-tag">IAM</span>
+                                <span class="project-tag">SIEM</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="project-card fade-in">
+                        <div class="project-header">
+                            <span class="material-icons" style="font-size: 2rem; margin-bottom: 0.5rem;">speed</span>
+                            <h4>GitOps CI/CD Platform</h4>
+                        </div>
+                        <div class="project-body">
+                            <p>Designed enterprise-grade GitOps workflow using ArgoCD and Flux, enabling automated deployments across 50+ microservices.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">ArgoCD</span>
+                                <span class="project-tag">GitHub Actions</span>
+                                <span class="project-tag">Helm</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="project-card fade-in">
+                        <div class="project-header">
+                            <span class="material-icons" style="font-size: 2rem; margin-bottom: 0.5rem;">smart_toy</span>
+                            <h4>LLM Infrastructure Platform</h4>
+                        </div>
+                        <div class="project-body">
+                            <p>Architected scalable infrastructure for hosting and serving large language models with GPU optimization and auto-scaling.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">NVIDIA GPUs</span>
+                                <span class="project-tag">Ray</span>
+                                <span class="project-tag">vLLM</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="project-card fade-in">
+                        <div class="project-header">
+                            <span class="material-icons" style="font-size: 2rem; margin-bottom: 0.5rem;">savings</span>
+                            <h4>Cloud Cost Optimization Engine</h4>
+                        </div>
+                        <div class="project-body">
+                            <p>Developed automated cost optimization solution achieving 40% reduction in cloud spend through intelligent resource management.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">FinOps</span>
+                                <span class="project-tag">Python</span>
+                                <span class="project-tag">Spot Instances</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -581,7 +957,7 @@
                                     <span class="material-icons">email</span>
                                 </div>
                                 <h4>Email</h4>
-                                <p>vijay@mevijay.io</p>
+                                <p><a href="mailto:vijay@mevijay.io" style="color: white; text-decoration: none;">vijay@mevijay.io</a></p>
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -596,15 +972,40 @@
                         <div class="col-md-4">
                             <div class="contact-card fade-in">
                                 <div class="contact-icon">
-                                    <span class="material-icons">business</span>
+                                    <span class="material-icons">location_on</span>
                                 </div>
-                                <h4>LinkedIn</h4>
-                                <p>linkedin.com/in/sharmavijay86</p>
+                                <h4>Location</h4>
+                                <p>Pune, India</p>
                             </div>
                         </div>
                     </div>
+                    
+                    <!-- Social Media Links -->
+                    <div class="social-links fade-in">
+                        <a href="https://linkedin.com/in/sharmavijay86" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+                            </svg>
+                        </a>
+                        <a href="https://github.com/sharmavijay86" target="_blank" rel="noopener noreferrer" class="social-link" title="GitHub">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                            </svg>
+                        </a>
+                        <a href="https://twitter.com/sharmavijay86" target="_blank" rel="noopener noreferrer" class="social-link" title="Twitter">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z"/>
+                            </svg>
+                        </a>
+                        <a href="https://medium.com/@sharmavijay86" target="_blank" rel="noopener noreferrer" class="social-link" title="Medium">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M9.025 8c0 2.485-2.02 4.5-4.513 4.5A4.506 4.506 0 0 1 0 8c0-2.486 2.02-4.5 4.512-4.5A4.506 4.506 0 0 1 9.025 8zm4.95 0c0 2.34-1.01 4.236-2.256 4.236-1.246 0-2.256-1.897-2.256-4.236 0-2.34 1.01-4.236 2.256-4.236 1.246 0 2.256 1.897 2.256 4.236zM16 8c0 2.096-.355 3.795-.794 3.795-.438 0-.793-1.7-.793-3.795 0-2.096.355-3.795.794-3.795.438 0 .793 1.699.793 3.795z"/>
+                            </svg>
+                        </a>
+                    </div>
+                    
                     <div class="text-center mt-5 fade-in">
-                        <p class="lead">Ready to transform your cloud infrastructure? Let's discuss your project!</p>
+                        <p class="lead">Ready to transform your cloud infrastructure with AI-driven solutions? Let's discuss your project!</p>
                         <a href="mailto:vijay@mevijay.io" class="btn btn-primary-custom">
                             <span class="material-icons" style="vertical-align: middle; margin-right: 8px;">send</span>
                             Send Message
@@ -618,7 +1019,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Vijay Vishwakarma. All rights reserved. | Cloud Engineer & Freelance Consultant</p>
+            <p>&copy; 2025 Vijay Vishwakarma. All rights reserved. | DevOps Engineer | Cloud Architect | AI Solutions Architect</p>
         </div>
     </footer>
 
