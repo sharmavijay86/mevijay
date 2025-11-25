@@ -1,0 +1,60 @@
+---
+layout: default
+---
+
+<section class="section" style="padding-top: 140px;">
+    <div class="container">
+        <p class="mb-4"><a href="{{ '/blog/' | relative_url }}" class="text-decoration-none" style="color: var(--accent-color);">
+            <span class="material-icons" style="vertical-align: middle; margin-right: 6px;">arrow_back</span>
+            Back to Blog
+        </a></p>
+        <article class="blog-post fade-in">
+            <header class="mb-4">
+                <p class="text-uppercase" style="letter-spacing: 2px; color: var(--accent-color); font-weight: 600;">Insights</p>
+                <h1 style="font-size: 2.5rem; font-weight: 700;">{{ page.title }}</h1>
+                <div class="d-flex flex-wrap align-items-center text-muted" style="gap: 1rem;">
+                    <span><span class="material-icons" style="font-size: 1.1rem; vertical-align: middle;">event</span> {{ page.date | date: "%B %d, %Y" }}</span>
+                    {% if page.read_time %}
+                    <span><span class="material-icons" style="font-size: 1.1rem; vertical-align: middle;">schedule</span> {{ page.read_time }} min read</span>
+                    {% endif %}
+                    {% if page.tags %}
+                    <span>
+                        <span class="material-icons" style="font-size: 1.1rem; vertical-align: middle;">sell</span>
+                        {% for tag in page.tags %}
+                            <span class="badge bg-light text-dark me-1">{{ tag }}</span>
+                        {% endfor %}
+                    </span>
+                    {% endif %}
+                </div>
+            </header>
+            {% if page.featured_image %}
+            <figure class="featured-image">
+                <img src="{{ page.featured_image.url }}" alt="{{ page.featured_image.alt | default: page.title }}" loading="lazy">
+                {% if page.featured_image.credit %}
+                <figcaption>{{ page.featured_image.credit }}</figcaption>
+                {% endif %}
+            </figure>
+            {% endif %}
+            <div class="post-body">
+                {{ content }}
+            </div>
+            <hr class="my-5">
+            <div class="d-flex justify-content-between flex-wrap gap-3">
+                {% if page.previous %}
+                <a class="text-decoration-none" href="{{ page.previous.url | relative_url }}">
+                    <small class="text-muted">Previous</small>
+                    <div class="fw-semibold">{{ page.previous.title }}</div>
+                </a>
+                {% else %}
+                <span></span>
+                {% endif %}
+                {% if page.next %}
+                <a class="text-decoration-none text-end" href="{{ page.next.url | relative_url }}">
+                    <small class="text-muted">Next</small>
+                    <div class="fw-semibold">{{ page.next.title }}</div>
+                </a>
+                {% endif %}
+            </div>
+        </article>
+    </div>
+</section>

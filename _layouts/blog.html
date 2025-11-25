@@ -1,0 +1,67 @@
+---
+layout: default
+---
+
+<section class="section blog-hero" style="padding-top: 140px;">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <p class="text-uppercase" style="letter-spacing: 3px; color: var(--accent-color); font-weight: 600;">Insights & Playbooks</p>
+                <h1 style="font-size: 3rem; font-weight: 700;">Blog & Thought Leadership</h1>
+                <p class="lead text-muted">
+                    Long-form breakdowns on DevOps transformations, multi-cloud reference architectures, AI-driven automation, 
+                    and battle-tested practices from the field.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" style="padding-top: 40px;">
+    <div class="container">
+        <div class="row g-4">
+            {% assign posts = paginator.posts | default: site.posts %}
+            {% for post in posts %}
+            <div class="col-lg-4 col-md-6">
+                <article class="blog-card fade-in">
+                    {% if post.featured_image %}
+                    <div class="blog-card-image">
+                        <img src="{{ post.featured_image.small_url | default: post.featured_image.url }}" alt="{{ post.featured_image.alt | default: post.title }}" loading="lazy">
+                    </div>
+                    {% endif %}
+                    <div class="blog-card-body">
+                        <span class="badge bg-light text-dark mb-3">{{ post.category | default: 'DevOps' }}</span>
+                        <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+                        <p class="text-muted">{{ post.excerpt | strip_html | truncate: 140 }}</p>
+                        <div class="d-flex justify-content-between align-items-center text-muted">
+                            <small>{{ post.date | date: "%b %d, %Y" }}</small>
+                            {% if post.read_time %}
+                            <small>{{ post.read_time }} min read</small>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <a class="stretched-link" href="{{ post.url | relative_url }}" aria-label="Read {{ post.title }}"></a>
+                </article>
+            </div>
+            {% endfor %}
+        </div>
+
+        {% if paginator.total_pages and paginator.total_pages > 1 %}
+        <nav aria-label="Blog pagination" class="mt-5">
+            <ul class="pagination justify-content-center">
+                {% if paginator.previous_page %}
+                <li class="page-item"><a class="page-link" href="{{ paginator.previous_page_path | relative_url }}">Previous</a></li>
+                {% endif %}
+                {% for page in (1..paginator.total_pages) %}
+                <li class="page-item {% if page == paginator.page %}active{% endif %}">
+                    <a class="page-link" href="{{ paginator.paginate_path | replace: ':num', page | relative_url }}">{{ page }}</a>
+                </li>
+                {% endfor %}
+                {% if paginator.next_page %}
+                <li class="page-item"><a class="page-link" href="{{ paginator.next_page_path | relative_url }}">Next</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+        {% endif %}
+    </div>
+</section>

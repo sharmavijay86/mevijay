@@ -1,0 +1,52 @@
+title: "Vijay Vishwakarma"
+description: "DevOps Engineer | Public Cloud Architect | AI Solutions Architect"
+url: "https://sharmavijay86.github.io/mevijay"
+baseurl: ""
+email: "vijay@mevijay.io"
+author:
+  name: "Vijay Vishwakarma"
+  email: "vijay@mevijay.io"
+  twitter_username: sharmavijay86
+  github_username: sharmavijay86
+  linkedin: sharmavijay86
+permalink: "/blog/:categories/:title/"
+collections:
+  pages:
+    output: true
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-paginate
+
+paginate: 5
+paginate_path: "/blog/page:num/"
+
+# Navigation items
+nav_links:
+  - title: Home
+    url: "/"
+  - title: About
+    url: "/#about"
+  - title: Skills
+    url: "/#skills"
+  - title: Blog
+    url: "/blog/"
+  - title: Contact
+    url: "/#contact"
+
+social_links:
+  - label: GitHub
+    icon: github
+    url: "https://github.com/sharmavijay86"
+  - label: LinkedIn
+    icon: linkedin
+    url: "https://linkedin.com/in/sharmavijay86"
+  - label: Twitter
+    icon: twitter
+    url: "https://twitter.com/sharmavijay86"
+  - label: Email
+    icon: mail
+    url: "mailto:vijay@mevijay.io"
