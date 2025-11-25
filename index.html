@@ -379,6 +379,26 @@
             z-index: 1;
         }
 
+        .project-image-ai {
+            background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+        }
+
+        .project-image-k8s {
+            background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);
+        }
+
+        .project-image-security {
+            background: linear-gradient(135deg, #9333ea 0%, #7e22ce 100%);
+        }
+
+        .project-image-finops {
+            background: linear-gradient(135deg, #0891b2 0%, #0e7490 100%);
+        }
+
+        .project-image-devops {
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+        }
+
         .project-body {
             padding: 1.5rem;
         }
@@ -519,9 +539,10 @@
                 padding-left: 50px;
             }
 
-            .timeline-content::before {
-                left: -38px !important;
-                right: auto !important;
+            .timeline-item .timeline-content::before,
+            .timeline-item:nth-child(even) .timeline-content::before {
+                left: -38px;
+                right: auto;
             }
         }
     </style>
@@ -756,7 +777,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="project-card fade-in">
-                        <div class="project-image" style="background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);">
+                        <div class="project-image project-image-ai">
                             <span class="material-icons">psychology</span>
                         </div>
                         <div class="project-body">
@@ -772,7 +793,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="project-card fade-in">
-                        <div class="project-image" style="background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);">
+                        <div class="project-image project-image-k8s">
                             <span class="material-icons">hub</span>
                         </div>
                         <div class="project-body">
@@ -788,7 +809,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="project-card fade-in">
-                        <div class="project-image" style="background: linear-gradient(135deg, #9333ea 0%, #7e22ce 100%);">
+                        <div class="project-image project-image-security">
                             <span class="material-icons">security</span>
                         </div>
                         <div class="project-body">
@@ -804,7 +825,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="project-card fade-in">
-                        <div class="project-image" style="background: linear-gradient(135deg, #0891b2 0%, #0e7490 100%);">
+                        <div class="project-image project-image-finops">
                             <span class="material-icons">trending_up</span>
                         </div>
                         <div class="project-body">
@@ -820,7 +841,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="project-card fade-in">
-                        <div class="project-image" style="background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);">
+                        <div class="project-image project-image-devops">
                             <span class="material-icons">rocket_launch</span>
                         </div>
                         <div class="project-body">
