@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vijay Vishwakarma - Cloud Engineer Portfolio</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --accent-color: #f59e0b;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f8fafc;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-color);
+            border-radius: 4px;
+        }
+
+        /* Navigation */
+        .navbar {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary-color) !important;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: var(--text-dark) !important;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color) !important;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 50%;
+            background-color: var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+            left: 0;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero .lead {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .btn-primary-custom {
+            background: var(--accent-color);
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .btn-primary-custom:hover {
+            background: #e09506;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Cloud Logos */
+        .cloud-logos {
+            margin-top: 3rem;
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        .cloud-logo {
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 15px;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+        }
+
+        .cloud-logo:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .cloud-logo img {
+            width: 35px;
+            height: 35px;
+            object-fit: contain;
+        }
+
+        /* Sections */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about {
+            background: var(--bg-light);
+        }
+
+        .about-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-light);
+        }
+
+        /* Skills Section */
+        .skill-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .skill-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .skill-card h4 {
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        /* Services Section */
+        .services {
+            background: var(--bg-light);
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2.5rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            height: 100%;
+            border-top: 4px solid var(--primary-color);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .service-icon {
+            font-size: 3.5rem;
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, var(--text-dark) 0%, #374151 100%);
+            color: white;
+        }
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .contact-icon {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .cloud-logo {
+                width: 50px;
+                height: 50px;
+                margin: 0 10px;
+            }
+            
+            .cloud-logo img {
+                width: 30px;
+                height: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <span class="material-icons" style="vertical-align: middle; margin-right: 8px;">cloud</span>
+                Vijay Vishwakarma
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 hero-content">
+                    <h1>Vijay Vishwakarma</h1>
+                    <p class="lead">Cloud Engineer & Freelance Consultant</p>
+                    <p class="lead">Specialized in AWS, Azure & Google Cloud Platform</p>
+                    <a href="#contact" class="btn btn-primary-custom">
+                        <span class="material-icons" style="vertical-align: middle; margin-right: 8px;">email</span>
+                        Get In Touch
+                    </a>
+                    
+                    <!-- Cloud Logos -->
+                    <div class="cloud-logos d-flex justify-content-start align-items-center">
+                        <div class="cloud-logo">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTIwIDJMMjQgMTJIMzZMMjggMjJIMzZMMjAgMzhMNCAyMkgxMkw0IDEySDEyTDIwIDJaIiBmaWxsPSIjRkY5OTAwIi8+Cjwvc3ZnPgo=" alt="AWS">
+                        </div>
+                        <div class="cloud-logo">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBmaWxsPSIjMDA3OEQ0Ii8+CjxyZWN0IHg9IjgiIHk9IjgiIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgZmlsbD0id2hpdGUiLz4KPC9zdmc+Cg==" alt="Azure">
+                        </div>
+                        <div class="cloud-logo">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTMiIGN5PSIxMyIgcj0iNSIgZmlsbD0iIzQyODVGNCIvPgo8Y2lyY2xlIGN4PSIyNyIgY3k9IjEzIiByPSI1IiBmaWxsPSIjRUE0MzM1Ii8+CjxjaXJjbGUgY3g9IjEzIiBjeT0iMjciIHI9IjUiIGZpbGw9IiNGQkJDMDQiLz4KPGNpcmNsZSBjeD0iMjciIGN5PSIyNyIgcj0iNSIgZmlsbD0iIzM0QTg1MyIvPgo8L3N2Zz4K" alt="GCP">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <div style="width: 300px; height: 300px; background: rgba(255,255,255,0.1); border-radius: 50%; margin: 0 auto; display: flex; align-items: center; justify-content: center;">
+                        <span class="material-icons" style="font-size: 8rem; color: rgba(255,255,255,0.8);">person</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="container">
+            <h2 class="section-title fade-in">About Me</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="about-content fade-in">
+                        <p class="mb-4">
+                            I'm Vijay Vishwakarma, a passionate Cloud Engineer with extensive experience in designing, 
+                            implementing, and managing cloud infrastructure across multiple platforms. With a deep 
+                            understanding of AWS, Azure, and Google Cloud Platform, I help organizations transform 
+                            their infrastructure and optimize their cloud journey.
+                        </p>
+                        <p class="mb-4">
+                            As a freelance consultant, I work with businesses of all sizes to architect scalable, 
+                            secure, and cost-effective cloud solutions. My expertise spans from infrastructure 
+                            automation and DevOps practices to cloud migration strategies and optimization.
+                        </p>
+                        <p>
+                            I'm committed to staying at the forefront of cloud technology trends and continuously 
+                            expanding my knowledge to deliver innovative solutions that drive business success.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">Technical Skills</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="skill-card fade-in">
+                        <div class="skill-icon">
+                            <span class="material-icons">cloud_queue</span>
+                        </div>
+                        <h4>Cloud Platforms</h4>
+                        <p>Expert in AWS, Azure, and Google Cloud Platform. Certified in multiple cloud services and architectures.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="skill-card fade-in">
+                        <div class="skill-icon">
+                            <span class="material-icons">settings</span>
+                        </div>
+                        <h4>DevOps & Automation</h4>
+                        <p>Infrastructure as Code using Terraform, CloudFormation, ARM templates, and CI/CD pipeline automation.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="skill-card fade-in">
+                        <div class="skill-icon">
+                            <span class="material-icons">security</span>
+                        </div>
+                        <h4>Security & Compliance</h4>
+                        <p>Cloud security best practices, compliance frameworks, and implementing robust security measures.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="skill-card fade-in">
+                        <div class="skill-icon">
+                            <span class="material-icons">storage</span>
+                        </div>
+                        <h4>Data & Analytics</h4>
+                        <p>Cloud data solutions, big data platforms, and analytics services across all major cloud providers.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="skill-card fade-in">
+                        <div class="skill-icon">
+                            <span class="material-icons">developer_mode</span>
+                        </div>
+                        <h4>Containerization</h4>
+                        <p>Docker, Kubernetes, container orchestration, and microservices architecture implementation.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="skill-card fade-in">
+                        <div class="skill-icon">
+                            <span class="material-icons">monitoring</span>
+                        </div>
+                        <h4>Monitoring & Optimization</h4>
+                        <p>Cloud monitoring, performance optimization, cost management, and resource scaling strategies.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section services">
+        <div class="container">
+            <h2 class="section-title fade-in">Freelance Services</h2>
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="service-card fade-in">
+                        <div class="service-icon">
+                            <span class="material-icons">architecture</span>
+                        </div>
+                        <h3>Cloud Architecture</h3>
+                        <p>Design and implement scalable, secure, and cost-effective cloud architectures tailored to your business needs.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="service-card fade-in">
+                        <div class="service-icon">
+                            <span class="material-icons">cloud_sync</span>
+                        </div>
+                        <h3>Cloud Migration</h3>
+                        <p>Seamless migration of your existing infrastructure to the cloud with minimal downtime and maximum efficiency.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="service-card fade-in">
+                        <div class="service-icon">
+                            <span class="material-icons">build</span>
+                        </div>
+                        <h3>DevOps Implementation</h3>
+                        <p>Set up CI/CD pipelines, infrastructure automation, and DevOps best practices to accelerate your development.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="service-card fade-in">
+                        <div class="service-icon">
+                            <span class="material-icons">trending_down</span>
+                        </div>
+                        <h3>Cost Optimization</h3>
+                        <p>Analyze and optimize your cloud spending while maintaining performance and scalability requirements.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="service-card fade-in">
+                        <div class="service-icon">
+                            <span class="material-icons">school</span>
+                        </div>
+                        <h3>Training & Consulting</h3>
+                        <p>Provide cloud training and consulting services to help your team master cloud technologies and best practices.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="service-card fade-in">
+                        <div class="service-icon">
+                            <span class="material-icons">support</span>
+                        </div>
+                        <h3>Ongoing Support</h3>
+                        <p>24/7 monitoring, maintenance, and support services to ensure your cloud infrastructure runs smoothly.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <h2 class="section-title fade-in" style="color: white;">Get In Touch</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="contact-card fade-in">
+                                <div class="contact-icon">
+                                    <span class="material-icons">email</span>
+                                </div>
+                                <h4>Email</h4>
+                                <p>vijay@mevijay.io</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="contact-card fade-in">
+                                <div class="contact-icon">
+                                    <span class="material-icons">phone</span>
+                                </div>
+                                <h4>Phone</h4>
+                                <p>+91 20 xxxxxxx</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="contact-card fade-in">
+                                <div class="contact-icon">
+                                    <span class="material-icons">business</span>
+                                </div>
+                                <h4>LinkedIn</h4>
+                                <p>linkedin.com/in/sharmavijay86</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-5 fade-in">
+                        <p class="lead">Ready to transform your cloud infrastructure? Let's discuss your project!</p>
+                        <a href="mailto:vijay@mevijay.io" class="btn btn-primary-custom">
+                            <span class="material-icons" style="vertical-align: middle; margin-right: 8px;">send</span>
+                            Send Message
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Vijay Vishwakarma. All rights reserved. | Cloud Engineer & Freelance Consultant</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+
+        // Typing effect for hero title
+        function typeWriter(element, text, speed = 100) {
+            let i = 0;
+            element.innerHTML = '';
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            type();
+        }
+
+        // Initialize typing effect when page loads
+        window.addEventListener('load', function() {
+            const heroTitle = document.querySelector('.hero h1');
+            if (heroTitle) {
+                const originalText = heroTitle.textContent;
+                typeWriter(heroTitle, originalText, 100);
+            }
+        });
+
+        // Particle effect for hero background
+        function createParticles() {
+            const hero = document.querySelector('.hero');
+            for (let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.style.cssText = `
+                    position: absolute;
+                    width: 2px;
+                    height: 2px;
+                    background: rgba(255, 255, 255, 0.3);
+                    border-radius: 50%;
+                    top: ${Math.random() * 100}%;
+                    left: ${Math.random() * 100}%;
+                    animation: float ${5 + Math.random() * 10}s infinite linear;
+                    z-index: 1;
+                `;
+                hero.appendChild(particle);
+            }
+        }
+
+        // Add floating animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes float {
+                0% { transform: translateY(0px) rotate(0deg); }
+                33% { transform: translateY(-10px) rotate(120deg); }
+                66% { transform: translateY(10px) rotate(240deg); }
+                100% { transform: translateY(0px) rotate(360deg); }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Initialize particles
+        createParticles();
+    </script>
+</body>
+</html>
